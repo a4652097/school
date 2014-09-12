@@ -1,0 +1,21 @@
+.panel.panel-warning
+  .panel-heading  学生管理系统
+  .panel-body
+    lable
+    .jumbotron
+      .container
+          h1 欢迎进入我的学生管理系统!
+          p
+            = link_to '增加一个年级', new_grade_path
+            br
+            = link_to '操作年级', show_grade_grades_path
+            br
+            = link_to '增加学生信息', new_student_path
+            br
+            = link_to '查询学生', select_grades_path
+            p
+            a.btn.btn-primary.btn-lg role="button" 狂戳这个按钮吧！！！
+
+
+  .panel-footer 关于我们
+

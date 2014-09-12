@@ -1,0 +1,8 @@
+.panel.panel-warning
+  .panel-heading 查询年级学生
+  .panel-body
+    =form_for :student,url:{action: :show_list} do |s|
+      lable 选择年级名：
+      =s.select(:grade_id, @grade.map{ |c| [c.name,c.id]})
+      =s.submit '查询'
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"

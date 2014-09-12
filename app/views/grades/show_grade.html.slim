@@ -1,0 +1,19 @@
+.panel.panel-warning
+  .panel-heading 查询结果
+  .panel-body
+    -if @grade.present?
+      table
+        thead
+          th 年级
+          th 操作
+          tbody
+              - @grade.each do |g|
+                tr
+                  td = g.name
+                  td = link_to '删除',g, method: :delete
+                  td = link_to '修改',edit_grade_path(g.id)
+
+    -else
+        |没有年级
+  = will_paginate @grade
+  .panel-footer = link_to '返回首页',root_path

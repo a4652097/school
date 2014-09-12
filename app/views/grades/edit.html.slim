@@ -1,0 +1,8 @@
+.panel.panel-warning
+  .panel-heading 修改年级
+  .panel-body
+    = form_for @grade do |s|
+        lable 年级:
+        = s.text_field :name
+        = s.submit '修改'
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"

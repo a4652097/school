@@ -1,0 +1,22 @@
+.panel.panel-warning
+  .panel-heading 成绩单
+  .panel-body
+    -if @mark.present?
+      table.table-striped.table-bordered
+        thead
+          th.col-md-2 姓名
+          th.col-md-2 语文
+          th.col-md-2 数学
+          th.col-md-2 英语
+          th.col-md-2 录入时间
+          tbody
+            -@mark.each do |m|
+              tr
+                td = m.student.name
+                td = m.chinese
+                td = m.maths
+                td = m.english
+                td = m.created_at
+    -else
+      |没有成绩
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"

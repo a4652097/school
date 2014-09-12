@@ -1,0 +1,8 @@
+.panel.panel-warning
+  .panel-heading 新增年级
+  .panel-body
+    = form_for :grade,url:{action: :create} do |g|
+      table 年级名：
+      = g.text_field :name
+      = g.submit '增加',class:"btn btn-info"
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"

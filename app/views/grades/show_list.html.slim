@@ -1,0 +1,25 @@
+.panel.panel-warning
+  .panel-heading 查询结果
+  .panel-body
+    -if @grade.students.present?
+      table.table-striped.table-bordered
+        thead
+          th.col-md-2 姓名
+          th.col-md-2  年龄
+          th.col-md-2  操作
+          th.col-md-2
+          th.col-md-2
+          th.col-md-2
+
+          tbody
+            - @grade.students.each do |student|
+              tr
+                td = student.name
+                td = student.age
+                td = link_to '修改', edit_student_path(student.id),class:"btn btn-link"
+                td = link_to '删除',student,method: :delete,class:"btn btn-link"
+                td = link_to '录入学生成绩',add_mark_path(student.id),class:"btn btn-link"
+                td = link_to '查询学生成绩',mark_path(student.id),class:"btn btn-link"
+    -else
+      |没有学生
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"

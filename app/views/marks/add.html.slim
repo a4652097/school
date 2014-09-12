@@ -1,0 +1,14 @@
+.panel.panel-warning
+  .panel-heading 录入该学生成绩
+  .panel-body
+    = form_for @mark do |a|
+      lable 语文:
+      = a.text_field :chinese
+      lable 数学:
+      = a.text_field :maths
+      lable 英语:
+      = a.text_field :english
+      = a.text_field :student_id, type:"hidden",value: "#{@student_id}"
+      = a.submit '确定录入'
+
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"

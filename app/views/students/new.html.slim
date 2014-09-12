@@ -1,0 +1,12 @@
+.panel.panel-warning
+  .panel-heading 增加学生信息
+  .panel-body
+    = form_for @student do |s|
+      label 年级：
+      = s.select(:grade_id, @grades.map{ |c| [c.name, c.id] } )
+      label 姓名:
+      = s.text_field :name
+      label 年龄:
+      = s.text_field :age
+      = s.submit '增加'
+  .panel-footer = link_to '返回首页',root_path,class:"btn btn-info"
